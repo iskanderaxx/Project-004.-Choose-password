@@ -8,7 +8,7 @@ struct BruteForceMethod {
         return index < array.count ? Character(array[index]) : Character("")
     }
 
-    private func generateBruteForce(_ string: String, fromArray array: [String]) -> String {
+    func generateBruteForce(_ string: String, fromArray array: [String]) -> String {
         var stringForBruteForce: String = string
 
         if stringForBruteForce.count <= 0 {

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQm-9O-zZe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQm-9O-zZe">
                                 <rect key="frame" x="120" y="119.99999999999999" width="153" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemBlueColor"/>
@@ -30,18 +30,21 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="V5D-t1-Pub">
                                 <rect key="frame" x="174" y="458" width="45" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbY-3B-Ulf">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbY-3B-Ulf">
                                 <rect key="frame" x="205" y="643" width="153" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="153" id="FcK-QW-rJz"/>
-                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Change color"/>
+                                <connections>
+                                    <action selector="changeBackgroundColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRs-AG-o4y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbu-lb-XtD">
                                 <rect key="frame" x="35" y="643" width="153" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create password"/>
+                                <connections>
+                                    <action selector="createNewPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T6b-O5-iIN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -49,13 +52,18 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PEn-6G-GrR" secondAttribute="trailing" constant="96" id="3ew-fS-UP4"/>
                             <constraint firstItem="mbu-lb-XtD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="44K-8o-LCv"/>
+                            <constraint firstItem="NbY-3B-Ulf" firstAttribute="leading" secondItem="mbu-lb-XtD" secondAttribute="trailing" constant="17" id="6Bu-7M-fDZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NbY-3B-Ulf" secondAttribute="bottom" constant="140" id="76y-la-5pG"/>
                             <constraint firstItem="LQm-9O-zZe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="9yp-ZV-Do1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NbY-3B-Ulf" secondAttribute="trailing" constant="35" id="FUt-Ox-LKd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NbY-3B-Ulf" secondAttribute="bottom" constant="140" id="Fh4-HF-fzr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NbY-3B-Ulf" secondAttribute="trailing" constant="35" id="KmV-ff-Fcr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NbY-3B-Ulf" secondAttribute="bottom" constant="140" id="MtP-Ov-YDr"/>
+                            <constraint firstItem="NbY-3B-Ulf" firstAttribute="top" secondItem="V5D-t1-Pub" secondAttribute="bottom" constant="165" id="Uad-bl-Wgb"/>
                             <constraint firstItem="V5D-t1-Pub" firstAttribute="top" secondItem="PEn-6G-GrR" secondAttribute="bottom" constant="15" id="VwF-8b-dNt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NbY-3B-Ulf" secondAttribute="trailing" constant="35" id="YCm-ai-57Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LQm-9O-zZe" secondAttribute="trailing" constant="120" id="bYT-N5-hVk"/>
+                            <constraint firstItem="NbY-3B-Ulf" firstAttribute="leading" secondItem="mbu-lb-XtD" secondAttribute="trailing" constant="17" id="cgp-4G-efC"/>
                             <constraint firstItem="V5D-t1-Pub" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="174" id="p5E-QC-mUk"/>
                             <constraint firstItem="LQm-9O-zZe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="p9z-cd-vu0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V5D-t1-Pub" secondAttribute="trailing" constant="174" id="qem-aO-VGj"/>

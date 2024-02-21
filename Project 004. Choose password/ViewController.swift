@@ -43,5 +43,65 @@ class ViewController: UIViewController {
         }
         return passwordString
     }
+    
+    private func bruteForce(correctPassword: String) {
+        var myPassword = String()
+        let bruteForce = BruteForceMethod()
+        let allowedCharactes: [String] = String().printable.map { String($0) }
+        
+        while myPassword != correctPassword && bruteForcingIsRunning {
+            myPassword = bruteForce.generateBruteForce(myPassword, fromArray: allowedCharactes)
+            
+            DispatchQueue.main.async {
+                self.generatedPasswordLabel.text = myPassword
+            }
+        }
+        endBruteForce()
+    }
+    
+    private func endBruteForce() {
+        bruteForcingIsRunning = false
+        
+        DispatchQueue.main.async {
+            self.generatedPasswordLabel.text = "Failed"
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func createNewPassword(_ sender: UIButton) {
+        if bruteForcingIsRunning {
+            bruteForcingIsRunning = false
+            endBruteForce()
+            return
+        }
+        
+        let numberOfPasswordSymbols: Int = 4
+        let newPassword = createRandomValueForPasswordOf(symbolsNumber: numberOfPasswordSymbols)
+        
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.text = newPassword
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
+        createPasswordButton.setTitle("Stop", for: .normal)
+        bruteForcingIsRunning = true
+        
+        DispatchQueue.global().async { [ weak self ] in
+            self?.bruteForce(correctPassword: newPassword)
+        }
+    }
+
+    @IBAction func changeBackgroundColor(_ sender: UIButton) {
+        backgroundIsBlack.toggle()
+        
+        if bruteForcingIsRunning {
+            bruteForcingIsRunning = false
+            endBruteForce()
+        }
+    }
 }
 
