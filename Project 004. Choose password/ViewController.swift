@@ -13,11 +13,11 @@ class ViewController: UIViewController {
     
     // MARK: - UI Elements & Oulets
     
-    @IBOutlet weak var generatedPasswordLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var createPasswordButton: UIButton!
-    @IBOutlet weak var changeColorButton: UIButton!
+    @IBOutlet weak var generatePasswordButton: UIButton!
+    @IBOutlet weak var changeBackgroundColorButton: UIButton!
     
     // MARK: - Lifecycle
 
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    private func createRandomValueForPasswordOf(symbolsNumber: Int) -> String {
+    private func createRandomValueForPasswordWith(randomSymbols: Int) -> String {
         let alphabet = "abcdefghijklmnopqrstuvwxyz"
         let alphabetUppercased = alphabet.uppercased()
         let numbers = "0123456789"
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         let charactersCount = UInt32(charactersForPassword.count)
         var passwordString = String()
         
-        for _ in 0 ..< symbolsNumber {
+        for _ in 0 ..< randomSymbols {
             let anyNumber = Int(arc4random_uniform(charactersCount))
             let anyIndex = charactersForPassword.index(charactersForPassword.startIndex, offsetBy: anyNumber)
             let incrementedCharacter = charactersForPassword[anyIndex]
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
             myPassword = bruteForce.generateBruteForce(myPassword, fromArray: allowedCharactes)
             
             DispatchQueue.main.async {
-                self.generatedPasswordLabel.text = myPassword
+                self.passwordLabel.text = myPassword
             }
         }
         endBruteForce()
@@ -63,9 +63,10 @@ class ViewController: UIViewController {
         bruteForcingIsRunning = false
         
         DispatchQueue.main.async {
-            self.generatedPasswordLabel.text = "Failed"
+            self.passwordLabel.text = "Failed"
             self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
+            self.passwordTextField.isSecureTextEntry = false
         }
     }
     
@@ -78,8 +79,8 @@ class ViewController: UIViewController {
             return
         }
         
-        let numberOfPasswordSymbols: Int = 4
-        let newPassword = createRandomValueForPasswordOf(symbolsNumber: numberOfPasswordSymbols)
+        let passwordSymbolsNumber: Int = 4
+        let newPassword = createRandomValueForPasswordWith(randomSymbols: passwordSymbolsNumber)
         
         passwordTextField.isSecureTextEntry = true
         passwordTextField.text = newPassword
@@ -87,7 +88,7 @@ class ViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
-        createPasswordButton.setTitle("Stop", for: .normal)
+        generatePasswordButton.setTitle("Stop", for: .normal)
         bruteForcingIsRunning = true
         
         DispatchQueue.global().async { [ weak self ] in

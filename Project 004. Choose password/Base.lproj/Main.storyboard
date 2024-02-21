@@ -31,19 +31,19 @@
                                 <rect key="frame" x="174" y="458" width="45" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbY-3B-Ulf">
-                                <rect key="frame" x="205" y="643" width="153" height="35"/>
+                                <rect key="frame" x="224" y="643" width="134" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Change color"/>
                                 <connections>
-                                    <action selector="changeBackgroundColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRs-AG-o4y"/>
+                                    <action selector="changeBackgroundColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fH1-Gc-Vpo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbu-lb-XtD">
-                                <rect key="frame" x="35" y="643" width="153" height="35"/>
+                                <rect key="frame" x="35" y="643" width="172" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Create password"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Generate password"/>
                                 <connections>
-                                    <action selector="createNewPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T6b-O5-iIN"/>
+                                    <action selector="createNewPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ulW-TG-e6h"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,9 +74,9 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="V5D-t1-Pub" id="3sn-4M-75s"/>
-                        <outlet property="changeColorButton" destination="NbY-3B-Ulf" id="ahJ-t9-Sxx"/>
-                        <outlet property="createPasswordButton" destination="mbu-lb-XtD" id="1gs-Ns-m42"/>
-                        <outlet property="generatedPasswordLabel" destination="LQm-9O-zZe" id="gSm-R5-s1w"/>
+                        <outlet property="changeBackgroundColorButton" destination="NbY-3B-Ulf" id="6Bl-m0-eGw"/>
+                        <outlet property="generatePasswordButton" destination="mbu-lb-XtD" id="5R4-Lx-1JS"/>
+                        <outlet property="passwordLabel" destination="LQm-9O-zZe" id="hvB-4P-A8k"/>
                         <outlet property="passwordTextField" destination="PEn-6G-GrR" id="P3t-Dh-hC2"/>
                     </connections>
                 </viewController>
