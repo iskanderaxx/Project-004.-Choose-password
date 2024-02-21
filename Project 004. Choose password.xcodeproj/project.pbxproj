@@ -13,6 +13,8 @@
 		8C811D2C2B8609D8004C59C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C811D2A2B8609D8004C59C8 /* Main.storyboard */; };
 		8C811D2E2B8609D9004C59C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C811D2D2B8609D9004C59C8 /* Assets.xcassets */; };
 		8C811D312B8609D9004C59C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C811D2F2B8609D9004C59C8 /* LaunchScreen.storyboard */; };
+		8CFD08562B860E2B002E4F67 /* Foundation +Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFD08552B860E2B002E4F67 /* Foundation +Extensions.swift */; };
+		8CFD08582B860E4C002E4F67 /* BruteForceMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFD08572B860E4C002E4F67 /* BruteForceMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8C811D2D2B8609D9004C59C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C811D302B8609D9004C59C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C811D322B8609D9004C59C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CFD08552B860E2B002E4F67 /* Foundation +Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation +Extensions.swift"; sourceTree = "<group>"; };
+		8CFD08572B860E4C002E4F67 /* BruteForceMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForceMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		8C811D232B8609D8004C59C8 /* Project 004. Choose password */ = {
 			isa = PBXGroup;
 			children = (
+				8CFD08542B860DF9002E4F67 /* Extensions */,
 				8C811D242B8609D8004C59C8 /* AppDelegate.swift */,
 				8C811D262B8609D8004C59C8 /* SceneDelegate.swift */,
 				8C811D282B8609D8004C59C8 /* ViewController.swift */,
@@ -63,8 +68,17 @@
 				8C811D2D2B8609D9004C59C8 /* Assets.xcassets */,
 				8C811D2F2B8609D9004C59C8 /* LaunchScreen.storyboard */,
 				8C811D322B8609D9004C59C8 /* Info.plist */,
+				8CFD08572B860E4C002E4F67 /* BruteForceMethod.swift */,
 			);
 			path = "Project 004. Choose password";
+			sourceTree = "<group>";
+		};
+		8CFD08542B860DF9002E4F67 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CFD08552B860E2B002E4F67 /* Foundation +Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C811D292B8609D8004C59C8 /* ViewController.swift in Sources */,
+				8CFD08562B860E2B002E4F67 /* Foundation +Extensions.swift in Sources */,
 				8C811D252B8609D8004C59C8 /* AppDelegate.swift in Sources */,
 				8C811D272B8609D8004C59C8 /* SceneDelegate.swift in Sources */,
+				8CFD08582B860E4C002E4F67 /* BruteForceMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
